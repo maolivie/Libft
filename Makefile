@@ -6,18 +6,17 @@
 #    By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/06 16:19:46 by maolivie          #+#    #+#              #
-#    Updated: 2018/12/12 14:20:42 by maolivie         ###   ########.fr        #
+#    Updated: 2019/01/09 10:33:56 by maolivie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= libft.a
 CC				= gcc
-CFLAGS		   += -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror
 OBJDIR			= obj/
 AR				= ar
 ARFLAGS			= -rcs
 
-HEAD			= libft.h
 SRC				= ft_memset.c \
 				  ft_bzero.c \
 				  ft_memcpy.c \
@@ -71,7 +70,6 @@ SRC				= ft_memset.c \
 				  ft_putendl_fd.c \
 				  ft_putnbr_fd.c
 
-CFLAGS		   += -I $(HEAD)
 OBJ				= $(SRC:.c=.o)
 OUTPUT_OPTION	= -o $(OBJDIR)$@
 
