@@ -6,7 +6,7 @@
 #    By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/06 16:19:46 by maolivie          #+#    #+#              #
-#    Updated: 2019/01/10 19:58:11 by maolivie         ###   ########.fr        #
+#    Updated: 2019/01/11 17:25:19 by maolivie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ $(NAME): $(OBJ)
 $(OBJ): | $(OBJDIR)
 
 $(OBJDIR)/%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(COMPILE.c) $< -o $@
 
 $(OBJDIR):
 	mkdir $@
