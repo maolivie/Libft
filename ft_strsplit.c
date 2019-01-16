@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 17:45:08 by maolivie          #+#    #+#             */
-/*   Updated: 2019/01/16 22:20:56 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/16 23:06:40 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static char const	*skip(char mode, char const *s, char c)
 	}
 	else
 	{
-		while (*s == c)
+		while (*s && *s == c)
 			s++;
 		return (s);
 	}
