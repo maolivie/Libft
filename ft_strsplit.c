@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 17:45:08 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/03 19:24:59 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/16 20:29:58 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,16 @@ static unsigned int	nbr_words(char const *s, char c)
 	return (words);
 }
 
-static void			s_alloc(char ***ptab, unsigned int i, char const *s, char c)
+static char			**s_alloc(char **tab, unsigned int i, char const *s, char c)
 {
-	(*ptab)[i] = (char*)malloc(sizeof(char) * (skip_word(s, c) - s + 1));
-	if ((*ptab)[i] == NULL)
+	if (!(tab[i] = (char*)malloc(sizeof(char) * (skip_word(s, c) - s + 1))))
 	{
 		while (i-- > 0)
-			ft_strdel(*ptab + i);
-		free(*ptab);
-		*ptab = NULL;
+			ft_strdel(tab + i);
+		free(tab);
+		return (NULL);
 	}
+	return (tab);
 }
 
 char				**ft_strsplit(char const *s, char c)
@@ -69,8 +69,7 @@ char				**ft_strsplit(char const *s, char c)
 	s = skip_sep(s, c);
 	while (i < words)
 	{
-		s_alloc(&tab, i, s, c);
-		if (tab == NULL)
+		if (!s_alloc(tab, i, s, c))
 			return (NULL);
 		j = 0;
 		while (*s && *s != c)
