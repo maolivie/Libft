@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/17 14:20:31 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/03 22:05:44 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 17:24:26 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 	{
 		if (s[i] == (char)c)
 			return ((char*)(s + i));
-		i++;
+		++i;
 	}
 	return (NULL);
 }

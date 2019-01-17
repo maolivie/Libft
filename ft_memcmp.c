@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 17:09:28 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/04 17:22:30 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 17:21:18 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	str2 = (const unsigned char*)s2;
 	i = 0;
 	while (str1[i] == str2[i] && i < n - 1)
-		i++;
+		++i;
 	return (str1[i] - str2[i]);
 }

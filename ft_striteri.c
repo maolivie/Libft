@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 14:34:21 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/04 21:28:59 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 17:32:23 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	while (s[i])
 	{
 		(*f)(i, s + i);
-		i++;
+		++i;
 	}
 }

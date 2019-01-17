@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 15:27:53 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/03 21:48:44 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 17:34:21 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ size_t	ft_strlen(const char *s)
 
 	len = 0;
 	while (s[len])
-		len++;
+		++len;
 	return (len);
 }

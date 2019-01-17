@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 16:00:21 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/03 19:24:59 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 21:50:04 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_strtrim(char const *s)
 {
-	char	*str;
 	size_t	start;
 	size_t	end;
 
@@ -22,16 +21,11 @@ char	*ft_strtrim(char const *s)
 		return (NULL);
 	start = 0;
 	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
-		start++;
+		++start;
 	if (!s[start])
-	{
-		if (!(str = (char*)malloc(sizeof(char))))
-			return (NULL);
-		str[0] = '\0';
-		return (str);
-	}
+		return (ft_strnew(0));
 	end = ft_strlen(s) - 1;
 	while (s[end] == ' ' || s[end] == '\n' || s[end] == '\t')
-		end--;
+		--end;
 	return (ft_strsub(s, start, end - start + 1));
 }

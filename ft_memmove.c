@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 16:06:44 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/05 00:15:01 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 17:22:16 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		while (i < len)
 		{
 			sdst[i] = ssrc[i];
-			i++;
+			++i;
 		}
 	}
 	return (dst);

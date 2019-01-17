@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:28:06 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/03 19:24:59 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 16:48:09 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 void	ft_putendl(char const *s)
 {
-	if (s == NULL)
-		return ;
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	ft_putendl_fd(s, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 15:50:17 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/04 18:54:26 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 17:34:11 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	while (src[j] && i + j + 1 < size)
 	{
 		dst[i + j] = src[j];
-		j++;
+		++j;
 	}
 	dst[i + j] = '\0';
 	while (src[j])
-		j++;
+		++j;
 	if (size < i)
 		return (size + j);
 	return (i + j);

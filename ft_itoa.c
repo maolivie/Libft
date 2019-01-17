@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 17:55:50 by maolivie          #+#    #+#             */
-/*   Updated: 2019/01/16 15:24:58 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 18:55:31 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,8 @@ char					*ft_itoa(int n)
 	unsigned short	len;
 
 	len = nbr_len(n);
-	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
+	if ((str = ft_strnew(len)) == NULL)
 		return (NULL);
-	str[len] = '\0';
 	if (n < 0)
 	{
 		str[0] = '-';
@@ -52,7 +51,7 @@ char					*ft_itoa(int n)
 		abs = n;
 	while (abs >= 10)
 	{
-		str[--len] = (abs % 10) + '0';
+		str[--len] = abs % 10 + '0';
 		abs /= 10;
 	}
 	str[--len] = abs + '0';

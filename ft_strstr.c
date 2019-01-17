@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 11:46:07 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/03 22:10:47 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 18:04:59 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	{
 		i = 0;
 		while (needle[i] == haystack[i] && needle[i])
-			i++;
+			++i;
 		if (!needle[i])
 			return ((char*)haystack);
-		haystack++;
+		++haystack;
 	}
 	return (NULL);
 }

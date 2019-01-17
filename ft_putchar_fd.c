@@ -6,10 +6,11 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 15:22:23 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/03 19:24:59 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 15:05:35 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)

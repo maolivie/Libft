@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 12:03:45 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/03 22:00:43 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 17:38:38 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	while (src[i] && i < len)
 	{
 		dst[i] = src[i];
-		i++;
+		++i;
 	}
 	while (i < len)
 	{
 		dst[i] = '\0';
-		i++;
+		++i;
 	}
 	return (dst);
 }

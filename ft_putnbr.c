@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 11:58:28 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/03 19:24:59 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 17:05:20 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,5 @@
 
 void	ft_putnbr(int n)
 {
-	unsigned int abs;
-
-	if (n < 0)
-	{
-		abs = -n;
-		write(1, "-", 1);
-	}
-	else
-		abs = n;
-	if (abs > 9)
-		ft_putnbr(abs / 10);
-	ft_putchar('0' + abs % 10);
+	ft_putnbr_fd(n, 1);
 }

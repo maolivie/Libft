@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 15:37:42 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/05 00:31:09 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 17:38:03 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	while (s2[j] && j < n)
 	{
 		s1[i + j] = s2[j];
-		j++;
+		++j;
 	}
 	s1[i + j] = '\0';
 	return (s1);

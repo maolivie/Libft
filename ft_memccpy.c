@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 15:01:44 by maolivie          #+#    #+#             */
-/*   Updated: 2018/12/04 16:25:56 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 17:20:50 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		sdst[i] = ssrc[i];
 		if (ssrc[i] == (unsigned char)c)
 			return ((void*)(sdst + i + 1));
-		i++;
+		++i;
 	}
 	return (NULL);
 }
