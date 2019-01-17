@@ -6,25 +6,25 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 17:45:08 by maolivie          #+#    #+#             */
-/*   Updated: 2019/01/16 23:06:40 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/17 13:53:02 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#define WORD '1'
 #define SEP '0'
+#define WRD '1'
 
 static char const	*skip(char mode, char const *s, char c)
 {
-	if (mode == WORD)
+	if (mode == SEP)
 	{
-		while (*s && *s != c)
+		while (*s && *s == c)
 			s++;
 		return (s);
 	}
 	else
 	{
-		while (*s && *s == c)
+		while (*s && *s != c)
 			s++;
 		return (s);
 	}
@@ -39,22 +39,10 @@ static unsigned int	nbr_words(char const *s, char c)
 	{
 		if (*s != c)
 			words++;
-		s = skip(WORD, s, c);
+		s = skip(WRD, s, c);
 		s = skip(SEP, s, c);
 	}
 	return (words);
-}
-
-static char			**s_alloc(char **tab, unsigned int i, char const *s, char c)
-{
-	if (!(tab[i] = (char*)malloc(sizeof(char) * (skip(WORD, s, c) - s + 1))))
-	{
-		while (i-- > 0)
-			ft_strdel(tab + i);
-		free(tab);
-		return (NULL);
-	}
-	return (tab);
 }
 
 static char const	*fill_tab(char *str, char const *s, char c)
@@ -83,8 +71,13 @@ char				**ft_strsplit(char const *s, char c)
 	s = skip(SEP, s, c);
 	while (i < words)
 	{
-		if (!s_alloc(tab, i, s, c))
+		if (!(tab[i] = (char*)malloc(sizeof(char) * (skip(WRD, s, c) - s + 1))))
+		{
+			while (i-- > 0)
+				ft_strdel(tab + i);
+			free(tab);
 			return (NULL);
+		}
 		s = fill_tab(tab[i++], s, c);
 		s = skip(SEP, s, c);
 	}
