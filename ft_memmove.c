@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 16:06:44 by maolivie          #+#    #+#             */
-/*   Updated: 2019/01/17 17:22:16 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/01/19 20:58:59 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	const unsigned char	*ssrc;
 	size_t				i;
 
-	sdst = (unsigned char*)dst;
-	ssrc = (const unsigned char*)src;
-	if (sdst > ssrc)
+	if (dst >= src)
+		return (ft_memcpy(dst, src, len));
+	else
 	{
-		while (len-- > 0)
-			sdst[len] = ssrc[len];
-	}
-	if (sdst < ssrc)
-	{
+		sdst = (unsigned char*)dst;
+		ssrc = (const unsigned char*)src;
 		i = 0;
 		while (i < len)
 		{
