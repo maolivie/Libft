@@ -6,7 +6,7 @@
 #    By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/06 16:19:46 by maolivie          #+#    #+#              #
-#    Updated: 2019/01/11 18:34:59 by maolivie         ###   ########.fr        #
+#    Updated: 2019/01/24 18:21:29 by maolivie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ CFLAGS	= -Wall -Wextra -Werror
 OBJDIR	= obj
 AR		= ar
 ARFLAGS	= -rcs
+
+HEAD	= libft.h
 
 SRC		= ft_memset.c \
 		  ft_bzero.c \
@@ -77,16 +79,16 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $@ $?
 
-$(OBJ): | $(OBJDIR)
+$(OBJDIR)/%.o: %.c $(HEAD)
+	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(OBJDIR)/%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ): | $(OBJDIR)
 
 $(OBJDIR):
 	mkdir $@
 
 clean:
-	rm -Rf $(OBJDIR)
+	rm -rf $(OBJDIR)
 
 fclean: clean
 	rm -f $(NAME)
