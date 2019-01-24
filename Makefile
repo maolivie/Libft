@@ -6,7 +6,7 @@
 #    By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/06 16:19:46 by maolivie          #+#    #+#              #
-#    Updated: 2019/01/24 18:21:29 by maolivie         ###   ########.fr        #
+#    Updated: 2019/01/24 19:35:57 by maolivie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,21 +77,26 @@ OBJ		= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(AR) $(ARFLAGS) $@ $?
+	@$(AR) $(ARFLAGS) $@ $?
+	@echo "\n$@ \t\tupdated"
 
 $(OBJDIR)/%.o: %.c $(HEAD)
-	$(CC) $(CFLAGS) -o $@ -c $<
+	@$(CC) $(CFLAGS) -o $@ -c $<
+	@echo "$@   \tupdated"
 
 $(OBJ): | $(OBJDIR)
 
 $(OBJDIR):
-	mkdir $@
+	@mkdir $@
+	@echo "directory '$@'\t\tcreated\n"
 
 clean:
-	rm -rf $(OBJDIR)
+	@rm -rf $(OBJDIR)
+	@echo "directory '$(OBJDIR)'\t\tdeleted"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "$(NAME) \t\tdeleted\n"
 
 re: fclean all
 
