@@ -6,7 +6,7 @@
 #    By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/06 16:19:46 by maolivie          #+#    #+#              #
-#    Updated: 2019/01/25 02:33:43 by maolivie         ###   ########.fr        #
+#    Updated: 2019/01/25 02:53:49 by maolivie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,7 @@ WHITE	= \033[1;37m
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "\n$(YELLOW)$@ \t$(PURPLE)need to be update with $(WHITE)$(notdir $?)"
+	@echo "\n$(YELLOW)$@ \t$(PURPLE)must be updated with $(WHITE)$(notdir $?)"
 	@echo "$(PURPLE)Updating\t$(YELLOW)$@"
 	@$(AR) $(ARFLAGS) $@ $?
 	@echo "$@ :\t$(GREEN)Indexed / Up to date"
