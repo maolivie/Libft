@@ -6,7 +6,7 @@
 #    By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/06 16:19:46 by maolivie          #+#    #+#              #
-#    Updated: 2019/01/24 19:35:57 by maolivie         ###   ########.fr        #
+#    Updated: 2019/01/25 02:33:43 by maolivie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,29 +74,38 @@ SRC		= ft_memset.c \
 
 OBJ		= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
 
+GREEN	= \033[1;32m
+PURPLE	= \033[1;35m
+RED		= \033[1;31m
+YELLOW	= \033[1;33m
+BLUE	= \033[1;36m
+WHITE	= \033[1;37m
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	@echo "\n$(YELLOW)$@ \t$(PURPLE)need to be update with $(WHITE)$(notdir $?)"
+	@echo "$(PURPLE)Updating\t$(YELLOW)$@"
 	@$(AR) $(ARFLAGS) $@ $?
-	@echo "\n$@ \t\tupdated"
+	@echo "$@ :\t$(GREEN)Indexed / Up to date"
 
 $(OBJDIR)/%.o: %.c $(HEAD)
+	@echo "$(PURPLE)Updating\t$(WHITE)$@"
 	@$(CC) $(CFLAGS) -o $@ -c $<
-	@echo "$@   \tupdated"
 
 $(OBJ): | $(OBJDIR)
 
 $(OBJDIR):
+	@echo "$(GREEN)Creating\t$(WHITE)directory $(BLUE)'$@'\n"
 	@mkdir $@
-	@echo "directory '$@'\t\tcreated\n"
 
 clean:
+	@echo "$(RED)Deleting\t$(WHITE)directory $(BLUE)'$(OBJDIR)'"
 	@rm -rf $(OBJDIR)
-	@echo "directory '$(OBJDIR)'\t\tdeleted"
 
 fclean: clean
+	@echo "$(RED)Deleting\t$(YELLOW)$(NAME)\n"
 	@rm -f $(NAME)
-	@echo "$(NAME) \t\tdeleted\n"
 
 re: fclean all
 
