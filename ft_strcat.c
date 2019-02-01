@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 14:40:22 by maolivie          #+#    #+#             */
-/*   Updated: 2019/01/20 07:30:49 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/02/01 20:42:58 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	ft_strcpy(s1 + ft_strlen(s1), s2);
+	ft_strcpy(s1 + ft_strlen((const char*)s1), s2);
 	return (s1);
 }
