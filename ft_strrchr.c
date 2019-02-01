@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 10:42:25 by maolivie          #+#    #+#             */
-/*   Updated: 2019/01/17 16:02:46 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/02/01 18:39:43 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	size_t i;
 
 	i = ft_strlen(s) + 1;
 	while (i-- > 0)
