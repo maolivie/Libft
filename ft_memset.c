@@ -6,7 +6,7 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 15:57:46 by maolivie          #+#    #+#             */
-/*   Updated: 2019/02/01 18:37:11 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/02/10 19:43:04 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char *str;
+	unsigned char	*str;
+	size_t			i;
 
 	str = (unsigned char*)b;
-	while (len > 0)
-		str[--len] = (unsigned char)c;
+	i = 0;
+	while (i < len)
+		str[i++] = (unsigned char)c;
 	return (b);
 }
