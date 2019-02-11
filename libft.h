@@ -6,12 +6,11 @@
 /*   By: maolivie <maolivie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 17:19:08 by maolivie          #+#    #+#             */
-/*   Updated: 2019/01/17 15:57:54 by maolivie         ###   ########.fr       */
+/*   Updated: 2019/02/11 08:46:34 by maolivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-
 # define LIBFT_H
 
 # include <string.h>
